@@ -1,73 +1,69 @@
 @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css");
+@import "theme.scss";
 
 body {
   margin: 0;
-  color: #222222;
+  color: $primary;
   font-family: "Pretendard";
 }
 
 header {
+  @extend %maxWidth;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 24px;
-  max-width: 1280px;
-  margin: auto;
-}
 
-.logo {
-  width: 108px;
-}
+  .menu {
+    .logo {
+      width: 108px;
+    }
 
-button {
-  background-color: white;
-  font-size: 16px;
-  font-weight: 600;
-}
+    button {
+      font-size: 16px;
+      font-weight: 600;
+      display: none;
+      padding-left: 16px;
+      padding-right: 16px;
 
-.menu button {
-  display: none;
-  border: 0px;
-  padding-left: 16px;
-  padding-right: 16px;
-}
+      &:nth-child(2) {
+        margin-left: 44px;
+      }
 
-.menu button:nth-child(2) {
-  margin-left: 44px;
-}
-
-.loginBox {
-  display: flex;
-  align-items: center;
-}
-
-.login {
-  display: inline-block;
-  border: 1px solid rgb(232, 232, 232);
-  border-radius: 9999px;
-  padding: 8px 16px;
-  font-size: 14px;
-}
-
-.ellipsis {
-  width: 24px;
-  margin-left: 16px;
-}
-
-@media (min-width: 1024px) {
-  .menu button {
-    display: inline-block;
+      @include responsive("pc") {
+        display: inline-block;
+      }
+    }
   }
 
-  .login {
-    color: #737373;
-    font-size: 16px;
-    border: 0px;
-    padding: 0px;
-  }
+  .loginBox {
+    display: flex;
+    align-items: center;
 
-  .ellipsis {
-    display: none;
+    .login {
+      display: inline-block;
+      border: 1px solid rgb(232, 232, 232);
+      border-radius: 9999px;
+      padding: 8px 16px;
+      font-size: 14px;
+
+      @include responsive("pc") {
+        color: $secondary;
+        font-size: 16px;
+        border: 0px;
+        padding: 0px;
+      }
+    }
+
+    .ellipsis {
+      width: 24px;
+      margin-left: 16px;
+
+      @include responsive("pc") {
+        display: none;
+      }
+    }
   }
 }
 
@@ -96,13 +92,12 @@ button {
 }
 
 .contents {
-  max-width: 1280px;
-  margin: auto;
+  @extend %maxWidth;
   margin-top: 72px;
 }
 
 .contentsTitle {
-  color: #e67800;
+  color: $techitOrange;
   font-weight: 600;
 }
 
@@ -119,7 +114,7 @@ button {
 }
 
 .contentsDetail div:nth-child(1) {
-  color: #737373;
+  color: $secondary;
 }
 
 .contentsGrid {
@@ -170,35 +165,35 @@ button {
 
 .contentsCardComplete {
   display: inline;
-  border: 1px solid #059669;
+  border: 1px solid $complete;
   text-align: center;
   padding: 6px 8px;
   border-radius: 4px;
   font-size: 14px;
   font-weight: 600;
-  color: #059669;
+  color: $complete;
 }
 
 .contentsCardIng {
   display: inline;
-  border: 1px solid #1d4ed8;
+  border: 1px solid $ing;
   text-align: center;
   padding: 6px 8px;
   border-radius: 4px;
   font-size: 14px;
   font-weight: 600;
-  color: #1d4ed8;
+  color: $ing;
 }
 
 .contentsCardEnd {
   display: inline;
-  border: 1px solid #3f3f46;
+  border: 1px solid $end;
   text-align: center;
   padding: 6px 8px;
   border-radius: 4px;
   font-size: 14px;
   font-weight: 600;
-  color: #3f3f46;
+  color: $end;
 }
 
 .contentsCardTitle {
@@ -251,18 +246,17 @@ button {
 
 .alarmDetail {
   font-size: 14px;
-  color: #737373;
+  color: $secondary;
   font-weight: 600;
 }
 
 .introduce {
-  max-width: 1280px;
-  margin: auto;
+  @extend %maxWidth;
   margin-top: 72px;
 }
 
 .introduceTitle {
-  color: #e67800;
+  color: $techitOrange;
   font-weight: 600;
 }
 
@@ -274,7 +268,7 @@ button {
 
 .introduceDetail {
   margin-top: 16px;
-  color: #737373;
+  color: $secondary;
 }
 
 .introduceGrid {
@@ -320,20 +314,20 @@ button {
 
 .introduceCardDetail {
   font-size: 14px;
-  color: #737373;
+  color: $secondary;
   font-weight: 600;
 }
 
 .sitemap {
+  @extend %maxWidth;
+
   display: flex;
   justify-content: space-between;
-  max-width: 1280px;
-  margin: auto;
   padding-top: 32px;
-  border-top: 1px solid #d4d4d4;
+  border-top: 1px solid $border;
   margin-top: 120px;
   padding-bottom: 32px;
-  border-bottom: 1px solid #d4d4d4;
+  border-bottom: 1px solid $border;
 }
 
 .sitemapLogo {
@@ -351,7 +345,7 @@ button {
 .sitemapTitle {
   font-size: 12px;
   font-weight: 600;
-  color: #737373;
+  color: $secondary;
   margin-bottom: 20px;
 }
 
@@ -362,10 +356,10 @@ button {
 }
 
 footer {
-  max-width: 1280px;
-  margin: auto;
+  @extend %maxWidth;
+
   font-size: 12px;
-  color: #737373;
+  color: $secondary;
   padding-bottom: 24px;
 }
 
