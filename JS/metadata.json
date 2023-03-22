@@ -1,15 +1,31 @@
 {
   "name": "Baby Thor",
-  "description": "so cute",
+  "description": "cuteThor",
   "image": "https://이미지 경로",
   "attributes": [
     {
       "trait_type": "BACKGROUND",
-      "value": "Aquamarien"
+      "value": "LivingRoom Bar"
     },
     {
       "trait_type": "EARRING",
       "value": "Silver Hoop"
+    },
+    {
+      "trait_type": "WEAPON",
+      "value": "Hammer"
+    },
+    {
+      "trait_type": "Light",
+      "value": "Soft Sunlight"
+    },
+    {
+      "trait_type": "Costume",
+      "value": "Viking Armor"
+    },
+    {
+      "trait_type": "Artist",
+      "value": "Dio"
     }
   ]
 }
